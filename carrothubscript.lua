@@ -2352,7 +2352,6 @@ v23.MouseButton1Down:Connect(function()
             Size = UDim2.new(0, 50, 0, 50)
         });
         v483:Play();
-        game:GetService("VirtualInputManager"):SendKeyEvent(true, Enum.KeyCode.End, false, game);
     end);
 end);
 if game:GetService("ReplicatedStorage").Effect.Container:FindFirstChild("Death") then
@@ -6270,93 +6269,6 @@ v16.Teleport:AddButton({
         elseif (_G.SelectIsland == "Tiki Outpost") then
             Tween2(CFrame.new(- 16542.447265625, 55.68632888793945, 1044.41650390625));
         end
-    end
-});
-v16.Visual:AddButton({
-    Title = "Quest",
-    Description = "",
-    Callback = function()
-        local v318 = game:GetService("Players").LocalPlayer;
-        local v319 = require(game:GetService("ReplicatedStorage").Notification);
-        local v320 = v318:WaitForChild("Data");
-        local v321 = require(game.ReplicatedStorage:WaitForChild("EXPFunction"));
-        local v322 = require(game:GetService("ReplicatedStorage").Effect.Container.LevelUp);
-        local v323 = require(game:GetService("ReplicatedStorage").Util.Sound);
-        local v324 = game:GetService("ReplicatedStorage").Util.Sound.Storage.Other:FindFirstChild("LevelUp_Proxy") or game:GetService("ReplicatedStorage").Util.Sound.Storage.Other:FindFirstChild("LevelUp") ;
-        function v129(v543)
-            local v544 = v543;
-            while true do
-                local v649, v650 = string.gsub(v544, "^(-?%d+)(%d%d%d)", "%1,%2");
-                v544 = v649;
-                if (v650 == 0) then
-                    break;
-                end
-            end
-            return v544;
-        end
-        v319.new("<Color=Yellow>QUEST COMPLETED!<Color=/>"):Display();
-        v319.new("Earned<Color=Yellow>9,999,999,999,999 Exp.<Color=/>(+None)"):Display();
-        v319.new("Earned<Color=Green>$9,999,999,999,999<Color=/>"):Display();
-        v318.Data.Exp.Value = 999999999999;
-        v318.Data.Beli.Value = v318.Data.Beli.Value + 999999999999 ;
-        delay = 0;
-        count = 0;
-        while (v318.Data.Exp.Value - v321(v320.Level.Value)) > 0 do
-            v318.Data.Exp.Value = v318.Data.Exp.Value - v321(v320.Level.Value) ;
-            v318.Data.Level.Value = v318.Data.Level.Value + 1 ;
-            v318.Data.Points.Value = v318.Data.Points.Value + 3 ;
-            v322({
-                v318
-            });
-            v323.Play(v323, v324.Value);
-            v319.new("<Color=Green>LEVEL UP!<Color=/>(" .. v318.Data.Level.Value .. ")"):Display();
-            count = count + 1 ;
-            if (count >= 5) then
-                delay = tick();
-                count = 0;
-                wait();
-            end
-        end
-    end
-});
-v16.Visual:AddInput("Input_Level", {
-    Title = "Level",
-    Default = "",
-    Placeholder = "",
-    Numeric = false,
-    Finished = false,
-    Callback = function(v327)
-        game:GetService("Players")['LocalPlayer'].Data.Level.Value = tonumber(v327);
-    end
-});
-v16.Visual:AddInput("Input_EXP", {
-    Title = "Exp",
-    Default = "",
-    Placeholder = "",
-    Numeric = false,
-    Finished = false,
-    Callback = function(v329)
-        game:GetService("Players")['LocalPlayer'].Data.Exp.Value = tonumber(v329);
-    end
-});
-v16.Visual:AddInput("Input_Beli", {
-    Title = "Money",
-    Default = "",
-    Placeholder = "",
-    Numeric = false,
-    Finished = false,
-    Callback = function(v331)
-        game:GetService("Players")['LocalPlayer'].Data.Beli.Value = tonumber(v331);
-    end
-});
-v16.Visual:AddInput("Input_Fragments", {
-    Title = "F",
-    Default = "",
-    Placeholder = "",
-    Numeric = false,
-    Finished = false,
-    Callback = function(v333)
-        game:GetService("Players")['LocalPlayer'].Data.Fragments.Value = tonumber(v333);
     end
 });
 local v122 = game.ReplicatedStorage:FindFirstChild("Remotes").CommF_:InvokeServer("GetFruits");
