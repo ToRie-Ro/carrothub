@@ -1,6 +1,6 @@
 local v14 = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))();
 local v15 = v14:CreateWindow({
-    Title = "Carrot Hub - Blox Furits [Free]",
+    Title = "Lunar Hub - Blox Furits [Free]",
     SubTitle = "By Lunar",
     TabWidth = 160,
     Theme = "Dark",
@@ -8255,7 +8255,7 @@ spawn(function()
     end
 end);
 v14:Notify({
-    Title = "Carrot Hub",
+    Title = "Lunar Hub",
     Content = "Thank you",
     Duration = 10
 });
