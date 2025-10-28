@@ -2339,7 +2339,7 @@ v23.MouseButton1Down:Connect(function()
         v25.Rate = 0;
     end);
     v47:Play();
-    game:GetService("VirtualInputManager"):SendKeyEvent(true, Enum.KeyCode.End, true, Enum.KeyCode.End, game);
+    game:GetService("VirtualInputManager"):SendKeyEvent(true, Enum.KeyCode.End, false, game);
     v47.Completed:Connect(function()
         v23.Rotation = 0;
     end);
@@ -2352,6 +2352,7 @@ v23.MouseButton1Down:Connect(function()
             Size = UDim2.new(0, 50, 0, 50)
         });
         v483:Play();
+        game:GetService("VirtualInputManager"):SendKeyEvent(true, Enum.KeyCode.End, false, game);
     end);
 end);
 if game:GetService("ReplicatedStorage").Effect.Container:FindFirstChild("Death") then
