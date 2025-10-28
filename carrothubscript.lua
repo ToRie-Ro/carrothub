@@ -1,7 +1,7 @@
 local v14 = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))();
 local v15 = v14:CreateWindow({
-    Title = "Carrot Hub - Blox Furits [Free]",
-    SubTitle = "By Lunar",
+    Title = "Lunar Hub - Blox Furits [Free]",
+    SubTitle = "By Lily",
     TabWidth = 160,
     Theme = "Dark",
     Acrylic = false,
@@ -2339,7 +2339,7 @@ v23.MouseButton1Down:Connect(function()
         v25.Rate = 0;
     end);
     v47:Play();
-    game:GetService("VirtualInputManager"):SendKeyEvent(true, Enum.KeyCode.LeftControl, false, game);
+    game:GetService("VirtualInputManager"):SendKeyEvent(true, Enum.KeyCode.LeftControl, false, Enum.KeyCode.LeftControl, game);
     v47.Completed:Connect(function()
         v23.Rotation = 0;
     end);
@@ -8342,7 +8342,7 @@ spawn(function()
     end
 end);
 v14:Notify({
-    Title = "Carrot Hub",
+    Title = "Lunar Hub",
     Content = "Thank you",
     Duration = 10
 });
